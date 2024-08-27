@@ -294,3 +294,9 @@ const result = await pExecFile('npm', ['run', 'build']);
 
 - [Sindre Sorhus](https://github.com/sindresorhus)
 - [@ehmicky](https://github.com/ehmicky)
+
+## Related
+
+- [execa](https://github.com/sindresorhus/execa) - Process execution for humans
+- [yoctocolors](https://github.com/sindresorhus/yoctocolors) - Tiny terminal text coloring
+- [yocto-spinner](https://github.com/sindresorhus/yocto-spinner) - Tiny terminal spinner
