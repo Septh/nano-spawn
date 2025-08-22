@@ -126,7 +126,7 @@ export type Result = {
 	/**
 	If `subprocess.pipe()` was used, the result or error of the other subprocess that was piped into this subprocess.
 	*/
-	pipedFrom?: Result | SubprocessError;
+	pipedFrom?: Result | SubprocessError | undefined;
 };
 
 /**
