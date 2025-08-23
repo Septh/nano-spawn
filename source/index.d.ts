@@ -1,7 +1,7 @@
 import type {ChildProcess, SpawnOptions} from 'node:child_process';
 
 type StdioOption = Readonly<Exclude<SpawnOptions['stdio'], undefined>[number]>;
-type StdinOption = StdioOption | {readonly string?: string};
+type StdinOption = StdioOption | {readonly string?: string | undefined};
 
 /**
 Options passed to `nano-spawn`.
@@ -147,7 +147,7 @@ export class SubprocessError extends Error implements Result {
 
 	This is `undefined` when the subprocess could not be started, or when it was terminated by a signal.
 	*/
-	exitCode?: number;
+	exitCode?: number | undefined;
 
 	/**
 	The name of the [signal](https://en.wikipedia.org/wiki/Signal_(IPC)) (like [`SIGTERM`](https://en.wikipedia.org/wiki/Signal_(IPC)#SIGTERM)) that terminated the subprocess, sent by either:
@@ -156,7 +156,7 @@ export class SubprocessError extends Error implements Result {
 
 	If a signal terminated the subprocess, this property is defined and included in the [error message](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/message). Otherwise it is `undefined`.
 	*/
-	signalName?: string;
+	signalName?: string | undefined;
 }
 
 /**
